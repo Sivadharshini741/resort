@@ -1,0 +1,116 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resort Experience</title>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: #1a374d;
+      text-shadow: 1px 1px 2px #f0f4f8;
+    }
+
+    .options {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .option-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      width: 320px;
+      padding: 30px 25px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .option-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .option-card h2 {
+      margin-bottom: 20px;
+      color: #1a374d;
+    }
+
+    .option-card p {
+      font-size: 1rem;
+      color: #555;
+      display: none;
+      margin-top: 15px;
+      line-height: 1.4;
+    }
+
+    .btn {
+      background-color: #1a374d;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #406882;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Paradise Resort</h1>
+
+  <div class="options">
+    <div class="option-card">
+      <h2>Food Options</h2>
+      <button class="btn" onclick="toggleInfo('food-info')">Show Details</button>
+      <p id="food-info">
+        Enjoy our exquisite cuisine featuring fresh seafood, tropical fruits, and international dishes prepared by world-class chefs. Whether you want a casual beach snack or a gourmet dinner, we have you covered.
+      </p>
+    </div>
+
+    <div class="option-card">
+      <h2>Pool Facilities</h2>
+      <button class="btn" onclick="toggleInfo('pool-info')">Show Details</button>
+      <p id="pool-info">
+        Dive into our crystal-clear infinity pool overlooking the ocean, relax in the heated Jacuzzi, or enjoy poolside service with tropical cocktails and light snacks. Family and adults-only sections available.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function toggleInfo(id) {
+      const el = document.getElementById(id);
+      if (el.style.display === "block") {
+        el.style.display = "none";
+      } else {
+        el.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
